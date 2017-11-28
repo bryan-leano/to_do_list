@@ -1,0 +1,20 @@
+<h1>
+Editing: <%= @to_dos.item %>
+</h1>
+
+<hr />
+
+<%= form_for @to_dos do |f| %>
+    <%= f.label :item %>
+    <%= f.text_field :item %>
+    <br />
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <br />
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+    <br />
+    <%= f.submit %>
+<% end %>
+
+<%= link_to "Back", to_dos_path %>

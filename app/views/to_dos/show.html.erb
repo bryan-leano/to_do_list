@@ -1,0 +1,30 @@
+<h1><%= @to_dos.item %>
+
+- Completed: <%= @to_dos.completed ? 'Yes' : 'No' %>
+
+</h1>
+
+<blockquote>
+<br />
+<h3>
+Description: <%= @to_dos.description %>
+</h3>
+<br />
+<i>
+<i>
+Created At: <%= @to_dos.created_at %>
+</i>
+<br />
+<i>
+Updated At: <%= @to_dos.updated_at %>
+</i>
+
+<hr />
+
+<div class='action-buttons'>
+    <%= link_to'Edit', edit_to_do_path(@to_dos) %>
+    <%= link_to 'Delete', to_do_path(@to_dos),
+    method: :delete,
+    data: {confirm: "Really Delete?"} %>
+    <%= link_to "Back", to_dos_path %>
+</div>
